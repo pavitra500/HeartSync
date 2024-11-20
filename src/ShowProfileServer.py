@@ -91,11 +91,56 @@ def analyze_profile():
         # Check if both username and profileDetails are present
         if not username or not profile_details:
             return jsonify({"error": "Missing username or profile details"}), 400
+        
+
+        conn = get_db()
+        cursor = conn.cursor()
+
+        query = """
+        SELECT age, status, sex, orientation, body_type, height, diet, drinks, drugs, smokes, education, job, ethnicity, 
+               religion, offspring, pets, speaks, sign, essay0 
+        FROM users WHERE username = ?
+        """
+        cursor.execute(query, (username,))
+        user_profile = cursor.fetchone()
+
+        # Check if user profile exists
+        if not user_profile:
+            return jsonify({"error": "User profile not found"}), 404
+
+        # Extract user details into a dictionary
+        user_columns = ['age', 'status', 'sex', 'orientation', 'body_type', 'height', 'diet', 'drinks', 'drugs', 'smokes',
+                        'education', 'job', 'ethnicity', 'religion', 'offspring', 'pets', 'speaks', 'sign', 'essay0']
+        user_profile_dict = dict(zip(user_columns, user_profile))                
 
         # Construct the prompt for the AI assistant
         prompt = f"""
-        You are an AI assistant helping users on a matchmaking platform. The user named "{username}" is analyzing another profile with the following details:
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles:
 
+        **User Profile (Analyzer)**
+        Name: {username}
+        Age: {user_profile_dict.get("age")}
+        Location: {profile_details.get("location")}  # Assuming the user's location might also be needed
+        Status: {user_profile_dict.get("status")}
+        Sex: {user_profile_dict.get("sex")}
+        Orientation: {user_profile_dict.get("orientation")}
+        Body Type: {user_profile_dict.get("body_type")}
+        Height: {user_profile_dict.get("height")}
+        Diet: {user_profile_dict.get("diet")}
+        Drinks: {user_profile_dict.get("drinks")}
+        Drugs: {user_profile_dict.get("drugs")}
+        Smokes: {user_profile_dict.get("smokes")}
+        Education: {user_profile_dict.get("education")}
+        Job: {user_profile_dict.get("job")}
+        Ethnicity: {user_profile_dict.get("ethnicity")}
+        Religion: {user_profile_dict.get("religion")}
+        Offspring: {user_profile_dict.get("offspring")}
+        Pets: {user_profile_dict.get("pets")}
+        Languages Spoken: {user_profile_dict.get("speaks")}
+        Zodiac Sign: {user_profile_dict.get("sign")}
+        Bio: {user_profile_dict.get("essay0")}
+
+        **Potential Match Profile**
         Name: {profile_details.get("name")}
         Age: {profile_details.get("age")}
         Location: {profile_details.get("location")}
@@ -118,9 +163,11 @@ def analyze_profile():
         Zodiac Sign: {profile_details.get("sign")}
         Bio: {profile_details.get("essay0")}
 
-        Compare this profile with the preferences or potential compatibility for the user "{username}". Provide an analysis of whether these two profiles could be a good match and explain your reasoning.
-        Give the response in ENGLISH language only, dont give response in any other language.
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
         """
+        print("Prompt = ", prompt)
+
+        print("Prompt = ", prompt)
 
         # Send the prompt to GPT
         response = client.chat.completions.create(
