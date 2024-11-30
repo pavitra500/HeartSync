@@ -86,6 +86,24 @@
     cursor: pointer;
     border-radius: 5px;
   }
+
+  .analyzing-text {
+    font-style: italic;
+    font-weight: bold;
+    animation: fade 2s infinite;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   
   .button.analyze-button:hover {
     background-color: #45a049;

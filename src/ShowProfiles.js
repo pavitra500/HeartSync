@@ -15,6 +15,7 @@ const ShowProfiles = () => {
   const [imgurl, setImgUrl] = useState(''); // State to hold the image URL
   const [matchPopup, setMatchPopup] = useState(false);
   const [likedUser, setLikedUser] = useState('');
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [i,setI] = useState(0);
   const current_username = location.state.username;
 
@@ -106,11 +107,9 @@ const ShowProfiles = () => {
 
   const handleAnalyzeProfile = async (profile) => {
     try {
+      setIsAnalyzing(true); // Set analyzing to true
       console.log("Analyzing profile with HeartSync AI Assistant:", profile);
-
-      console.log('API Request URL:', 'http://localhost:5001/analyze_profile');
   
-      // Send all the details of the current profile
       const response = await axios.post('http://localhost:5001/analyze_profile', {
         username: current_username,
         profileDetails: {
@@ -146,8 +145,11 @@ const ShowProfiles = () => {
     } catch (error) {
       console.error("Error analyzing profile:", error);
       setAnalysisResult("An error occurred while analyzing the profile.");
+    } finally {
+      setIsAnalyzing(false); // Set analyzing to false after completion
     }
   };
+  
   
 
   return (
@@ -295,14 +297,17 @@ const ShowProfiles = () => {
     <div className="analysis-result-container">
       <h3>Analysis Result</h3>
       <div className="analysis-result-content">
-      <div className="output-container">
-        {analysisResult ? (
-          <p>{analysisResult}</p>
-        ) : (
-          <p>No analysis yet. Click "Analyse Profile" to start!</p>
-        )}
+        <div className="output-container">
+          {isAnalyzing ? (
+            <p className="analyzing-text">Please wait while our AI Assistant is analyzing your compatibility...</p>
+          ) : analysisResult ? (
+            <p>{analysisResult}</p>
+          ) : (
+            <p>No analysis yet. Click "Analyse Profile" to start!</p>
+          )}
+        </div>
       </div>
-      </div>
+
     </div>
   </div>
 </div>
