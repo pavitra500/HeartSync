@@ -169,19 +169,25 @@ def analyze_profile():
 
         print("Prompt = ", prompt)
 
-        # Send the prompt to GPT
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "system", "content": prompt}]
-        )
+        while True:
+        
+            # Send the prompt to GPT
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "system", "content": prompt}]
+            )
 
-        print("GPT Output = ",response.choices[0].message.content)
+            print("GPT Output = ",response.choices[0].message.content)
 
-        # Check the response object for the content
-        if response.choices and len(response.choices) > 0:
-            analysis_result = response.choices[0].message.content
-        else:
-            analysis_result = "No analysis could be generated. Please try again."
+            if "您的ip已由于触发防" in response.choices[0].message.content:
+                continue
+
+            # Check the response object for the content
+            if response.choices and len(response.choices) > 0:
+                analysis_result = response.choices[0].message.content
+                break
+            else:
+                analysis_result = "No analysis could be generated. Please try again."
 
         # Return the analysis result
         return jsonify({"analysisResult": analysis_result}), 200
