@@ -12,7 +12,10 @@ import string
 import numpy as np
 import ast
 import json
+import ollama
+import time
 import base64
+
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -43,6 +46,37 @@ def filter_dataframe(df, column, target_value):
         value_list = target_value.split()  # Split the string by spaces into a list
         df = df[df[column].isin(value_list)]
     return df
+
+# Function to interact with the local LLM
+def ask_local_llm(question, context=None):
+    desiredModel = 'llama3.2:3b'
+    
+    # If context is provided, include it in the prompt
+    if context:
+        prompt = f"Context: {context}\n\nQuestion: {question}"
+    else:
+        prompt = question
+
+    # Send the user input along with context to the model
+    response = ollama.chat(model=desiredModel, messages=[
+        {
+            'role': 'user',
+            'content': prompt,
+        },
+    ])
+
+    # Get the model's response
+    OllamaResponse = response['message']['content']
+    
+    # Print the model's response
+    print("Ollama: ", OllamaResponse)
+
+    # Optionally, save the response to a file (for logging purposes)
+    with open("OutputOllama.txt", "a", encoding="utf-8") as text_file:
+        text_file.write(f"User: {question}\nOllama: {OllamaResponse}\n\n")
+    
+    return OllamaResponse
+
 
 def filter_users(target_age_min=None, target_age_max=None, target_sex=None, target_status=None,
                  target_orientation=None, target_drinks=None, target_drugs=None, target_ethnicity=None,
@@ -215,6 +249,35 @@ def scale_and_sort_combined_features(combined_features, min_val=0, max_val=5):
 
 # ------------------------------------------------------------------------------------------------------------------------
 
+# Function to interact with the local LLM
+def ask_local_llm(question, context=None):
+    desiredModel = 'llama3.2:3b'
+    
+    # If context is provided, include it in the prompt
+    if context:
+        prompt = f"Context: {context}\n\nQuestion: {question}"
+    else:
+        prompt = question
+
+    # Send the user input along with context to the model
+    response = ollama.chat(model=desiredModel, messages=[
+        {
+            'role': 'user',
+            'content': prompt,
+        },
+    ])
+
+    # Get the model's response
+    OllamaResponse = response['message']['content']
+    
+    # Print the model's response
+    print("Ollama: ", OllamaResponse)
+
+    # Optionally, save the response to a file (for logging purposes)
+    with open("OutputOllama.txt", "a", encoding="utf-8") as text_file:
+        text_file.write(f"User: {question}\nOllama: {OllamaResponse}\n\n")
+    
+    return OllamaResponse
 
 
 
@@ -283,7 +346,7 @@ def ask_assistant():
 
     # Adjust the prompt to ask for suggestions specifically for the current user
     conversation_text = "\n".join([f"{msg.get('name', '')}: {msg.get('message', '')}" for msg in current_conversation])
-    prompt = f"I am {current_user} and I am talking to {otherUser}. This is {otherUser}'s profile {user_profile}. Based on {otherUser}'s profile and following latest conversation:\n{conversation_text}\n give me 5 suggestions for my next message based on our latest conversation and {otherUser}'s whole profile. Your response should be in English language only, not any other language."
+    prompt = f"I am {current_user} and I am talking to {otherUser}. This is {otherUser}'s profile {user_profile}. Based on {otherUser}'s profile and following latest conversation:\n{conversation_text}\n give me 5 suggestions for my next message based on our latest conversation and {otherUser}'s whole profile. Just give the 5 things that i can ask, dont write any extra text. Also, DO NOT suggest a question if last message is a question." 
 
     print(prompt)
 
@@ -291,8 +354,12 @@ def ask_assistant():
         model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": prompt}]
     )
-    suggestion = response.choices[0].message.content
+
+
+    #suggestion = response.choices[0].message.content
+    suggestion = ask_local_llm(prompt)
     suggestions = suggestion.strip().split('\n')
+    
 
     return jsonify({"suggestions": suggestions})
 
