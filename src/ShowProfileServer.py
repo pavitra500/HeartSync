@@ -5,6 +5,7 @@ import sqlite3
 from flask import Flask, jsonify, g
 from datetime import datetime
 from g4f.client import Client
+import time
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\pavit\\Desktop\\react-chat-app\\src\\users.db'
@@ -169,6 +170,8 @@ def analyze_profile():
 
         print("Prompt = ", prompt)
 
+        start_time = time.time()  # Record the start time
+
         while True:
         
             # Send the prompt to GPT
@@ -179,7 +182,12 @@ def analyze_profile():
 
             print("GPT Output = ",response.choices[0].message.content)
 
+            if len(response.choices[0].message.content) < 10: 
+                start_time = time.time()
+                continue
+
             if "您的ip已由于触发防" in response.choices[0].message.content:
+                start_time = time.time()
                 continue
 
             # Check the response object for the content
@@ -188,6 +196,12 @@ def analyze_profile():
                 break
             else:
                 analysis_result = "No analysis could be generated. Please try again."
+
+
+        end_time = time.time()  # Record the end time
+
+        elapsed_time = end_time - start_time
+        print(f"The LLM took {elapsed_time:.6f} seconds to respond for a prompt length of {len(prompt)} words.")
 
         # Return the analysis result
         return jsonify({"analysisResult": analysis_result}), 200
