@@ -5,6 +5,7 @@ import sqlite3
 from flask import Flask, jsonify, g
 from datetime import datetime
 from g4f.client import Client
+import ollama
 import time
 
 app = Flask(__name__)
@@ -16,6 +17,37 @@ CORS(app)
 client = Client()
 
 db = SQLAlchemy(app)
+
+
+# Function to interact with the local LLM
+def ask_local_llm(question, context=None):
+    desiredModel = 'llama3.2:3b'
+    
+    # If context is provided, include it in the prompt
+    if context:
+        prompt = f"Context: {context}\n\nQuestion: {question}"
+    else:
+        prompt = question
+
+    # Send the user input along with context to the model
+    response = ollama.chat(model=desiredModel, messages=[
+        {
+            'role': 'user',
+            'content': prompt,
+        },
+    ])
+
+    # Get the model's response
+    OllamaResponse = response['message']['content']
+    
+    # Print the model's response
+    print("Ollama: ", OllamaResponse)
+
+    # Optionally, save the response to a file (for logging purposes)
+    with open("OutputOllama.txt", "a", encoding="utf-8") as text_file:
+        text_file.write(f"User: {question}\nOllama: {OllamaResponse}\n\n")
+    
+    return OllamaResponse
 
 # Define models
 class Users(db.Model):
@@ -116,7 +148,7 @@ def analyze_profile():
 
         # Construct the prompt for the AI assistant
         prompt = f"""
-        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles:
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
 
         **User Profile (Analyzer)**
         Name: {username}
@@ -174,7 +206,7 @@ def analyze_profile():
 
         while True:
         
-            # Send the prompt to GPT
+           ''' # Send the prompt to GPT
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "system", "content": prompt}]
@@ -195,8 +227,13 @@ def analyze_profile():
                 analysis_result = response.choices[0].message.content
                 break
             else:
-                analysis_result = "No analysis could be generated. Please try again."
+                analysis_result = "No analysis could be generated. Please try again."'''
+           
+           response = ask_local_llm(prompt)
 
+           if len(response) > 0:
+               analysis_result = response
+               break
 
         end_time = time.time()  # Record the end time
 
