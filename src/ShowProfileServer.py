@@ -9,7 +9,7 @@ import ollama
 import time
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\pavit\\Desktop\\react-chat-app\\src\\users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\pavit\\Desktop\\Programming for LLM\\Project\\HeartSync-main\\src\\users.db'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 CORS(app)
@@ -89,7 +89,7 @@ class Match(db.Model):
     totalMatches = db.Column(db.Integer)
 
 
-DATABASE = 'C:\\Users\\pavit\\Desktop\\react-chat-app\\src\\users.db'
+DATABASE = 'C:\\Users\\pavit\\Desktop\\Programming for LLM\\Project\\HeartSync-main\\src\\users.db'
 DATABASE2 = 'C:\\Users\\pavit\\Desktop\\react-chat-app\\src\\conversations.db'
 
 def get_db():
@@ -261,16 +261,38 @@ def get_profiles(current_username):
 
         conn = get_db()
         cursor = conn.cursor()
+
+        # Query to get the target_sex for the current user
+        query = "SELECT target_sex FROM users WHERE username = ?"
+        cursor.execute(query, (current_username,))
+        result = cursor.fetchone()
+
+        if result:
+            target_sex = result[0]
+            print(f"Target sex for {current_username}: {target_sex}")
+        else:
+            print(f"No entry found for username: {current_username}")
+            return jsonify({"error": "No entry found for the current username"}), 404        
         
         # Prepare the query to select users based on ROWIDs and exclude the current username
-        query = """
+        '''query = """
         SELECT * FROM users 
         WHERE username != ? AND ROWID IN ({})
         """.format(','.join('?' for _ in rowids))  # Use '?' placeholders for ROWIDs in the query
 
         # Execute the query with the current_username and the ROWIDs
         cursor.execute(query, (current_username, *rowids))
+        profiles = cursor.fetchall()'''
+
+        query = """
+        SELECT * FROM users 
+        WHERE username != ? AND sex = ? AND ROWID IN ({})
+        """.format(','.join('?' for _ in rowids))  # Use '?' placeholders for ROWIDs in the query
+
+        # Execute the query with the current_username, target_sex, and ROWIDs
+        cursor.execute(query, (current_username, target_sex, *rowids))
         profiles = cursor.fetchall()
+
 
         columns = ['age','status','sex','orientation','body_type','diet','drinks','drugs','education','ethnicity','height','income','job','last_online','location','offspring','pets','religion','sign','smokes','speaks','essay0','essay1','essay2','essay3','essay4','essay5','essay6','essay7','essay8','essay9','username','password','name']
         

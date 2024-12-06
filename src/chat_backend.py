@@ -89,6 +89,8 @@ def filter_users(target_age_min=None, target_age_max=None, target_sex=None, targ
     df = pd.read_sql_query(query, conn)
     conn.close()
 
+    df.head()
+
 
     # Applying filters dynamically
     if target_age_min is not None:
@@ -711,7 +713,7 @@ def save_conversation():
 
 
 
-######################### VARUN's BACKEND ############################################################
+
 
 
 
@@ -1044,7 +1046,7 @@ def get_random_image2(username):
 
 
 
-######################### VARUN's BACKEND ############################################################
+
 
 
 

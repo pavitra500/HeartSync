@@ -556,3 +556,502 @@ Ollama: 1. Have you tried any local food or drinks in the Bay Area that you part
 4. Do you have a favorite spot for outdoor adventures around Berkeley or San Francisco?
 5. Have you started experimenting with any new beekeeping recipes using local honey?
 
+User: 
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
+
+        **User Profile (Analyzer)**
+        Name: Pavitra
+        Age: 29
+        Location: san francisco, california  # Assuming the user's location might also be needed
+        Status: Single
+        Sex: Male
+        Orientation: Single
+        Body Type: fit
+        Height: 183
+        Diet: Halal
+        Drinks: never
+        Drugs: never
+        Smokes: not at all
+        Education: software engineering software engineer
+        Job: software engineering software engineer
+        Ethnicity: Asian
+        Religion: Hindu
+        Offspring: Wants kids
+        Pets: Likes dogs
+        Languages Spoken: english (fluently), hindi
+        Zodiac Sign: pisces
+        Bio: I watch anime and I workout. I follow a very healthy lifestyle. Also, im a very open person and willing to date women from ethnciity or culture different than mine.
+
+        **Potential Match Profile**
+        Name: Penelope Jones
+        Age: 33
+        Location: san francisco, california
+        Status: Single
+        Sex: Female
+        Orientation: Straight
+        Body Type: athletic
+        Height: 152
+        Diet: Halal
+        Drinks: rarely
+        Drugs: often
+        Smokes: Rarely
+        Education: graduated from masters program
+        Job: science / tech / engineering
+        Ethnicity: Other
+        Religion: Christian
+        Offspring: Doesn't want kids
+        Pets: Likes some other pet
+        Languages Spoken: english (fluently)
+        Zodiac Sign: pisces and it&rsquo;s fun to think about
+        Bio: i relocated to san francisco half a year ago. that was an awesome few months that let me explore the diverse parts of the city, find a gorgeous victorian house to live in, meet my awesome roommates who became my best friends, find my first american emotional soul-mates, ride hot european wheels on the hilly streets of san francisco and the winding road to stinson beach, swim in the freezing waters of the bay, walk the ocean beach at full moon on warm, starry nights, experience the great outdoors hiking and cross-country skiing, fall in love with the local diversity and openness, abundance of cuisine, and embracement of active lifestyle.  this is the most awesome city to live in, and one where you can loose yourself in a continuous chase of newelties and adventure. and the people around will only support you in that amazing run for new experiences. having been absorbing this atmosphere for the past six months, i'm finally revelling in the clamness that i find inside me once again. like you, maybe, and so many bright people here, i've come to embrace this city as home. and i'm beginning to stabilize and live a well paced life, with time for personal and professional growth, fun with close friends, sports that keep the balance of my body and mind, and with the time to ponder and reflect on my way through life.
+
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
+        
+Ollama: Based on the provided information, I'll analyze the compatibility of Pavitra and Penelope Jones.
+
+**Similarities:**
+
+1. Location: Both profiles are based in San Francisco, California, which could be an advantage for a match.
+2. Age: The age gap between them is 4 years, which might not be significant for some people.
+3. Zodiac Sign: They share the same zodiac sign, Pisces, which can indicate a stronger emotional connection.
+4. Diet and lifestyle: Both profiles emphasize a healthy lifestyle and follow a halal diet.
+5. Education and Job: Pavitra is a software engineer, while Penelope has a master's degree in science/tech/engineering.
+
+**Differences:**
+
+1. Body Type and Height: There's a significant height difference (183 cm vs 152 cm), which might be a concern for some individuals.
+2. Orientation and Values: Pavitra is single and open to dating women from different cultures, while Penelope is straight and seems to value her independence.
+3. Offspring and Family Goals: Pavitra wants kids, while Penelope doesn't want children.
+4. Lifestyle and Interests: While both enjoy outdoor activities and have an appreciation for adventure, their specific interests differ (e.g., Pavitra mentions working out, while Penelope enjoys cycling, hiking, and sports).
+5. Religion: Pavitra is Hindu, while Penelope is Christian.
+
+**Compatibility Analysis:**
+
+Considering the similarities and differences, I would rate the compatibility of these profiles as moderate to low. While they share some common interests and values, their fundamental differences in orientation, family goals, and lifestyle might create tension or conflict in a relationship.
+
+Pavitra's openness to dating women from different cultures could be beneficial for Penelope, but it's essential to consider whether Penelope would feel comfortable with this aspect of Pavitra's personality. Conversely, Penelope's preference for independence and lack of desire for children might not align with Pavitra's values.
+
+Overall, while there are some positive aspects to their profiles, the differences in orientation, lifestyle, and family goals create a sense of uncertainty about their compatibility. It's essential for them to have open and honest discussions about their expectations, values, and goals before deciding whether to pursue a relationship.
+
+**Recommendation:**
+
+If Pavitra and Penelope are interested in exploring a relationship, I would suggest they prioritize getting to know each other better, discussing their differences, and understanding their compatibility. They should also consider whether their lifestyle and interests align well enough to support a fulfilling partnership.
+
+User: 
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
+
+        **User Profile (Analyzer)**
+        Name: Pavitra
+        Age: 29
+        Location: Houston, Texas  # Assuming the user's location might also be needed
+        Status: Single
+        Sex: Male
+        Orientation: Single
+        Body Type: fit
+        Height: 183
+        Diet: Halal
+        Drinks: never
+        Drugs: never
+        Smokes: not at all
+        Education: software engineering software engineer
+        Job: software engineering software engineer
+        Ethnicity: Asian
+        Religion: Hindu
+        Offspring: Wants kids
+        Pets: Likes dogs
+        Languages Spoken: english (fluently), hindi
+        Zodiac Sign: pisces
+        Bio: I watch anime and I workout. I follow a very healthy lifestyle. Also, im a very open person and willing to date women from ethnciity or culture different than mine.
+
+        **Potential Match Profile**
+        Name: Elizabeth
+        Age: 24
+        Location: Houston, Texas
+        Status: Single
+        Sex: Female
+        Orientation: Straight
+        Body Type: fit
+        Height: 176
+        Diet: healthy
+        Drinks: never
+        Drugs: never
+        Smokes: Never
+        Education: working on college/university
+        Job: Pharmacist
+        Ethnicity: Hispanic
+        Religion: Hispanic
+        Offspring: Wants kids
+        Pets: Likes Pets
+        Languages Spoken: english (fluently), spanish
+        Zodiac Sign: sagittarius
+        Bio: I like science and technology. I like anime as wel! JJK, Attack on titan are the best anime! Also, I goto gym and follow a very healthy lifestyle! Im open to seeing people different from my culture.
+
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
+        
+Ollama: Based on the provided profiles, here's an analysis of their compatibility:
+
+**Initial Observations:**
+
+1. Both Pavitra and Elizabeth share similar interests, such as anime and following a healthy lifestyle.
+2. They both have an open-minded approach to dating individuals from different cultures or ethnicities.
+3. Both are in the same age group (29 for Pavitra and 24 for Elizabeth) and are looking for serious relationships.
+
+**Complementary Qualities:**
+
+1. Career Balance: Pavitra is a software engineer, while Elizabeth is pursuing a career in pharmacy. This suggests that Pavitra has a more stable and secure job, which could provide stability for the relationship.
+2. Personality Traits: Both profiles highlight their openness and willingness to date individuals from different backgrounds, making them compatible partners for cultural exchange.
+
+**Potential Challenges:**
+
+1. Career Goals: Elizabeth is still in college, while Pavitra has already established herself as a software engineer. This difference in career stages might create some tension or challenges in the relationship.
+2. Zodiac Signs: While not necessarily an indication of compatibility, there's a 5-degree difference between their zodiac signs (Pisces for Pavitra and Sagittarius for Elizabeth). This distance might require more effort to understand each other's needs.
+
+**Compatibility Score:** 8/10
+
+The profiles show promising similarities in lifestyle, interests, and values. However, the potential challenges of career differences and zodiac sign discrepancies must be acknowledged. With open communication and a willingness to support each other, these factors could become less significant.
+
+User: 
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
+
+        **User Profile (Analyzer)**
+        Name: Pavitra
+        Age: 29
+        Location: san francisco, california  # Assuming the user's location might also be needed
+        Status: Single
+        Sex: Male
+        Orientation: Single
+        Body Type: fit
+        Height: 183
+        Diet: Halal
+        Drinks: never
+        Drugs: never
+        Smokes: not at all
+        Education: software engineering software engineer
+        Job: software engineering software engineer
+        Ethnicity: Asian
+        Religion: Hindu
+        Offspring: Wants kids
+        Pets: Likes dogs
+        Languages Spoken: english (fluently), hindi
+        Zodiac Sign: pisces
+        Bio: I watch anime and I workout. I follow a very healthy lifestyle. Also, im a very open person and willing to date women from ethnciity or culture different than mine.
+
+        **Potential Match Profile**
+        Name: Evelyn Miller
+        Age: 31
+        Location: san francisco, california
+        Status: Single
+        Sex: Female
+        Orientation: Straight
+        Body Type: fit
+        Height: 179
+        Diet: Anything
+        Drinks: not-at-all
+        Drugs: often
+        Smokes: Rarely
+        Education: working on college/university
+        Job: computer / hardware / software
+        Ethnicity: Hispanic/Latino
+        Religion: Agnostic
+        Offspring: Doesn't want kids
+        Pets: Likes cats
+        Languages Spoken: english, tagalog (poorly), c++ (okay)
+        Zodiac Sign: gemini but it doesn&rsquo;t matter
+        Bio: straight to the point! i sugar coat, but i mean well. sarcastic and a clown. good friend to talk to. i'm clumsy... yeah, fall all over myself. kid at heart. still dreamin those big dreams. bad with names. known to get a spot on a white shirt... it's inevitable! i like to iron my clothes; relaxing! that or running, gets the endorphins going.  not convinced of this matching online thing yet. still, anything's possible.  still reading this? maybe you're still interested or curious. ;)  hey, not looking for perfect because it doesn't exist. just the whole maybe we're different, maybe lots of imperfections, but maybe perfect for you know??
+
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
+        
+Ollama: **Compatibility Analysis**
+
+After analyzing both profiles, I can provide an assessment of their compatibility based on various factors.
+
+**Similarities:**
+
+1. **Location**: Both Pavitra and Evelyn share the same location, San Francisco, California, which could make it easier for them to meet in person.
+2. **Body Type and Fitness**: Both individuals have a fit body type, indicating a shared interest in physical health and wellness.
+3. **Religious Affiliation**: While Pavitra is Hindu, and Evelyn is Agnostic, both are open-minded and accepting of different cultures, which could be an attractive aspect for each other.
+
+**Differences:**
+
+1. **Lifestyle**: Pavitra's very healthy lifestyle might clash with Evelyn's occasionally drug use and love for ironing her clothes (which may indicate a more relaxed approach to life).
+2. **Drinking Habits**: Pavitra is a non-drinker, while Evelyn occasionally drinks.
+3. **Education**: Pavitra has completed his education, whereas Evelyn is still working on it.
+4. **Pets**: Pavitra likes dogs, while Evelyn prefers cats.
+5. **Offspring and Family Plans**: Pavitra wants kids, but Evelyn doesn't want to have children.
+
+**Compatibility Score: 6/10**
+
+While there are some similarities between the two profiles, their lifestyles and preferences seem to have different priorities. Pavitra's focus on physical health and family planning might not align with Evelyn's more relaxed approach to life and occasional substance use.
+
+However, it's essential to remember that every individual is unique, and compatibility can vary depending on personal circumstances. Both Pavitra and Evelyn should be given the opportunity to get to know each other and assess their compatibility in person.
+
+**Recommendation:**
+
+Considering the differences between their lifestyles and preferences, I would recommend a cautious approach when evaluating this potential match. It might be helpful for both parties to have an open and honest conversation about their values, lifestyle choices, and expectations before deciding whether to pursue a relationship further.
+
+User: 
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
+
+        **User Profile (Analyzer)**
+        Name: Pavitra
+        Age: 29
+        Location: san jose, california  # Assuming the user's location might also be needed
+        Status: Single
+        Sex: Male
+        Orientation: Single
+        Body Type: fit
+        Height: 183
+        Diet: Halal
+        Drinks: never
+        Drugs: never
+        Smokes: not at all
+        Education: software engineering software engineer
+        Job: software engineering software engineer
+        Ethnicity: Asian
+        Religion: Hindu
+        Offspring: Wants kids
+        Pets: Likes dogs
+        Languages Spoken: english (fluently), hindi
+        Zodiac Sign: pisces
+        Bio: I watch anime and I workout. I follow a very healthy lifestyle. Also, im a very open person and willing to date women from ethnciity or culture different than mine.
+
+        **Potential Match Profile**
+        Name: Emilia Smith
+        Age: 22
+        Location: san jose, california
+        Status: Seeing someone
+        Sex: Female
+        Orientation: Straight
+        Body Type: athletic
+        Height: 156
+        Diet: Halal
+        Drinks: socially
+        Drugs: never
+        Smokes: Often
+        Education: working on college/university
+        Job: education / academia
+        Ethnicity: Asian
+        Religion: Sikh
+        Offspring: Doesn't want kids
+        Pets: Dislikes pets
+        Languages Spoken: english (fluently)
+        Zodiac Sign: virgo but it doesn&rsquo;t matter
+        Bio: it will be way too boring to just reveal yourself in plain text..,,i guess it will be more interesting if we discover each other in person ,,plus im wary of online profiles...
+
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
+        
+Ollama: Based on the provided profiles, here's an analysis of their compatibility:
+
+**Initial Observations**
+
+* Both Pavitra and Emilia share similar interests in maintaining a healthy lifestyle (Pavitra is mentioned to follow a "very healthy lifestyle", while Pavitra doesn't drink or smoke).
+* They both come from Asian backgrounds and are open-minded about dating individuals from different ethnicities.
+* However, their age difference may be significant, with Pavitra being 7 years older than Emilia.
+
+**Values and Goals**
+
+* Both Pavitra and Emilia have similar values, such as valuing health and wellness (Pavitra's workout routine).
+* However, they differ in their long-term goals. Pavitra wants children, while Emilia does not.
+* Another area of difference is their career paths. Pavitra is a software engineer, while Emilia is studying education/academia.
+
+**Personality Traits**
+
+* Pavitra appears to be more outgoing and open-minded (willing to date individuals from different cultures).
+* Emilia seems more reserved, with a mention that she's wary of online profiles and prefers discovering each other in person. She also expresses her skepticism about revealing too much on an online profile.
+
+**Potential Issues**
+
+* The significant age difference may be a concern for some.
+* Pavitra's desire for children might create tension if Emilia changes her mind or is not ready for parenthood.
+* Emilia's dislike of pets and occasional smoking habits may also be potential areas of conflict.
+
+**Compatibility Score**
+
+Given the differences in their long-term goals, career paths, and personality traits, I would rate the compatibility score as 6 out of 10. While they share some common values and interests, their significant age difference and differing views on children and lifestyle habits may create tension or conflict in a relationship.
+
+**Recommendations**
+
+* If Pavitra is willing to be patient and understanding about Emilia's differences, it could work in their favor.
+* Both individuals should have an open and honest conversation about their expectations, goals, and values to ensure they're on the same page.
+* Due to the age difference and differing career paths, it might be beneficial for them to get to know each other better before making any long-term commitments.
+
+User: 
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
+
+        **User Profile (Analyzer)**
+        Name: Pavitra
+        Age: 29
+        Location: san jose, california  # Assuming the user's location might also be needed
+        Status: Single
+        Sex: Male
+        Orientation: Single
+        Body Type: fit
+        Height: 183
+        Diet: Halal
+        Drinks: never
+        Drugs: never
+        Smokes: not at all
+        Education: software engineering software engineer
+        Job: software engineering software engineer
+        Ethnicity: Asian
+        Religion: Hindu
+        Offspring: Wants kids
+        Pets: Likes dogs
+        Languages Spoken: english (fluently), hindi
+        Zodiac Sign: pisces
+        Bio: I watch anime and I workout. I follow a very healthy lifestyle. Also, im a very open person and willing to date women from ethnciity or culture different than mine.
+
+        **Potential Match Profile**
+        Name: Emilia Smith
+        Age: 22
+        Location: san jose, california
+        Status: Seeing someone
+        Sex: Female
+        Orientation: Straight
+        Body Type: athletic
+        Height: 156
+        Diet: Halal
+        Drinks: socially
+        Drugs: never
+        Smokes: Often
+        Education: working on college/university
+        Job: education / academia
+        Ethnicity: Asian
+        Religion: Sikh
+        Offspring: Doesn't want kids
+        Pets: Dislikes pets
+        Languages Spoken: english (fluently)
+        Zodiac Sign: virgo but it doesn&rsquo;t matter
+        Bio: it will be way too boring to just reveal yourself in plain text..,,i guess it will be more interesting if we discover each other in person ,,plus im wary of online profiles...
+
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
+        
+Ollama: Based on the information provided, here's an analysis of the compatibility between Pavitra and Emilia:
+
+**Positive Matchpoints:**
+
+1. **Shared values:** Both Pavitra and Emilia follow a halal diet, which suggests they may share similar dietary preferences and restrictions.
+2. **Similar ethnic background:** Both individuals are of Asian descent, which could create a sense of cultural familiarity and understanding between them.
+3. **Language proficiency:** Both Pavitra and Emilia speak English fluently, which reduces language barriers in communication.
+4. **Education:** Pavitra's background in software engineering might appeal to Emilia's interest in education and academia.
+
+**Negative Matchpoints:**
+
+1. **Relationship status:** Pavitra is single, while Emilia is seeing someone. This could create tension or uncertainty in their potential relationship.
+2. **Smoking habits:** Pavitra does not smoke, while Emilia often smokes. This difference may lead to disagreements about health and wellness.
+3. **Pets:** Emilia dislikes pets, which might be a significant concern for Pavitra, who likes dogs.
+4. **Offspring desires:** Pavitra wants kids, while Emilia does not want them. This fundamental disagreement could create long-term relationship challenges.
+
+**Red Flags:**
+
+1. **Emilia's wariness of online profiles:** While understandable, this trait might indicate a lack of openness to new connections or experiences.
+2. **Lack of bio detail:** Emilia's bio seems too brief and vague, which might suggest she is not as invested in getting to know Pavitra or sharing her personality.
+
+**Conclusion:**
+
+While there are some positive matchpoints between Pavitra and Emilia, their differences in relationship status, smoking habits, pet preferences, and offspring desires create significant challenges. Additionally, Emilia's wariness of online profiles and lack of bio detail raise concerns about compatibility.
+
+Based on these factors, I would rate the compatibility between these two profiles as 4 out of 10. While there is potential for a connection, the numerous red flags and significant differences in lifestyle preferences and relationship status suggest that this match may not be ideal.
+
+User: I am Pavitra and I am talking to Megan. This is Megan's profile age: 26, status: Seeing someone, sex: Female, orientation: Straight, body_type: fit, diet: Other, drinks: socially, drugs: sometimes, education: working on college/university, ethnicity: American, height: 176, income: -1, job: student, last_online: 2012-06-29-17-24, location: berkeley, california, offspring: Doesn't want kids, pets: Dislikes pets, religion: Jewish, sign: sagittarius, smokes: Rarely, speaks: english (fluently), french (fluently), spanish (poorly), essay0: originally from france, lived in 3 different countries, moved here 3 years ago and totally fell in love with the bay area. i am just looking to meet new people to hangout and explore the area with. i love to travel, in fact i just got back from central america where i spent a month. too short! i also love the outdoors and going on adventures; rock climbing, snowboarding, hiking, kayaking... you name it.  i also started to keep bees in backyard and it really is a fascinating hobby. and i get to have delicious local honey too :), essay1: i am in school right now to learn more about how to do business in the us. i trained as a pastry chef back home and now my main goal is to open a pastry shop in san francisco so i am just doing what needs to be done to achieve that goal., essay2: cooking/baking traveling seeing the good side of things, essay3: i guess physically it would be my eyes, but then if i just say a word my accents is giving me away! i just can't get rid of it :), essay4: books: the wind up bird chronicle, guns germs and steel, on the road, kundera's...  movies: jules et jim, the lives of others, city of god, into the wild, waltz with bashir, almodovar's, in the mood for love.  music: beirut, federico aubele, the xx, manu chao, gotan project, thievery corporation, feist, the whitest boy alive, the black keys...  food: too much to talk about on this subject. food is my world., essay5: a book travels people adrenaline change food, essay6: how it would be like to be a hunter-gatherer. people which country am i going to next?, essay7: None, essay8: i think reading is sexy., essay9: you want to go on adventures, eat well and have good conversations., username: Megan, password: Megan, name: Megan Martinez, image_path: None, target_age_min: 36, target_age_max: 63, target_sex: Male, target_status: Seeing someone, target_orientation: asexual, target_drinks: often, target_drugs: never, target_ethnicity: Black, target_height: 153, target_income: 173878, target_offspring: Wants kids, target_pets: Likes some other pet, target_religion: Hindu, target_smokes: Often. Based on Megan's profile and following latest conversation:
+Megan: WASSAAA
+Megan: HOW YOU DOINNNNNNNN BRUZZAAAAHHH
+Pavitra: I appreciate your lively spirit, Megan! Since you're learning about business in the US, have you discovered any local trends or preferences that you think you'll incorporate into your pastry shop?
+Megan: What do you like to do when you're not working as a software engineer?
+ give me 5 suggestions for my next message based on our latest conversation and Megan's whole profile. Just give the 5 things that i can ask, dont write any extra text. Also, DO NOT suggest a question if last message is a question.
+Ollama: 1. What inspired you to start keeping bees in your backyard?
+2. Have you tried any local Bay Area hiking spots recently?
+3. How do you like the food scene in Berkeley?
+4. Are you a fan of rock climbing, and have you explored any popular routes in California?
+5. Have you visited any local farmers' markets that sell artisanal honey?
+
+User: I am Pavitra and I am talking to Emilia. This is Emilia's profile age: 28, status: Single, sex: Female, orientation: Bisexual, body_type: athletic, diet: Anything, drinks: often, drugs: often, education: graduated from college/university, ethnicity: Other, height: 122, income: 80000, job: science / tech / engineering, last_online: 2012-06-30-10-27, location: daly city, california, offspring: Wants kids, pets: Dislikes pets, religion: Catholic, sign: leo, smokes: Rarely, speaks: english, essay0: hi! i'm new to the bay, moved up from la in january. definitely looking forward to exploring sf, seems like an amazing city. i work at a startup in the college space. work keeps me pretty busy, so i haven't gotten a chance to go out as much as i would like to. i've traveled quite a bit and collect shot glasses from every country that i visit..i think the count is around 25. i'd say my favorite place was greece. the beaches are incredible and the water is so warm! i would love to do a trip around the world , hopefully soon! in the mean time, i'm looking forward to taking some weekend trips to tahoe and napa.  a few of my favorite things : favorite shape: triangle, favorite movie: tropic thunder, favorite drink: arnold palmer, favorite wine: pinot noir.  p.s. i am not lying about my height., essay1: i work at a startup, essay2: None, essay3: None, essay4: my favorite travel destinations are greece, tokyo, paris, and vegas. trying new restaurants. love going to the beach especially exotic locations. vegas trips, wine tasting, golfing with the boys, playing basketball., essay5: None, essay6: None, essay7: None, essay8: None, essay9: None, username: Emilia, password: Emilia, name: Emilia Jones	 Garcia, image_path: None, target_age_min: 53, target_age_max: 57, target_sex: Male, target_status: Seeing someone, target_orientation: asexual, target_drinks: rarely, target_drugs: often, target_ethnicity: Black, target_height: 189, target_income: 188939, target_offspring: Wants kids, target_pets: Likes some other pet, target_religion: Atheist, target_smokes: Rarely. Based on Emilia's profile and following latest conversation:
+Emilia: It's a Match!! Use our HeartSync Assistant to get going!
+Emilia: Hello!
+ give me 5 suggestions for my next message based on our latest conversation and Emilia's whole profile. Just give the 5 things that i can ask, dont write any extra text. Also, DO NOT suggest a question if last message is a question.
+Ollama: 1. How do you like working in the startup space?
+2. What's your favorite part about living in Daly City?
+3. Have you traveled to many places with your job?
+4. Do you have a favorite hobby or activity outside of work and travel?
+5. How do you plan on balancing social life while working busy hours?
+
+User: 
+        You are an AI assistant helping users on a matchmaking platform. Analyze the compatibility of the following two profiles.:
+
+        **User Profile (Analyzer)**
+        Name: Pavitra
+        Age: 29
+        Location: san francisco, california  # Assuming the user's location might also be needed
+        Status: Single
+        Sex: Male
+        Orientation: Straight
+        Body Type: athletic
+        Height: 183
+        Diet: Anything
+        Drinks: often
+        Drugs: sometimes
+        Smokes: Often
+        Education: 
+        Job: software engineer
+        Ethnicity: Indian
+        Religion: Hindu
+        Offspring: Wants kids
+        Pets: Likes some other pet
+        Languages Spoken: english (fluently), spanish (fluently)
+        Zodiac Sign: scorpio
+        Bio: I like gym and i watch anime
+
+        **Potential Match Profile**
+        Name: Ava Moore
+        Age: 26
+        Location: san francisco, california
+        Status: Seeing someone
+        Sex: Female
+        Orientation: Lesbian
+        Body Type: curvy
+        Height: 184
+        Diet: Kosher
+        Drinks: socially
+        Drugs: sometimes
+        Smokes: Often
+        Education: graduated from space camp
+        Job: artistic / musical / writer
+        Ethnicity: Black
+        Religion: Agnostic
+        Offspring: Wants kids
+        Pets: Likes cats
+        Languages Spoken: english (fluently), french (poorly), spanish (poorly), german (okay)
+        Zodiac Sign: 
+        Bio: have you ever had to do that exercise where you write your own obituary and it's supposed to make you take stock of your life and help you figure out what you really want to be doing with it? this account is something like that. that's not to say everything herein is made up or a lie. some of it is real.
+
+        Analyze the compatibility of these profiles and explain your reasoning. Also give the output in English language only, not in any other language.
+        
+Ollama: Analyzing the compatibility of Pavitra and Ava Moore:
+
+**Similarities:**
+
+1. **Location**: Both are from San Francisco, California, which is a significant plus as they would already have a common understanding of each other's lives and surroundings.
+2. **Age range**: Pavitra is 29 and Ava is 26, making them relatively close in age and maturity level.
+3. **Value on family**: Both want kids, indicating a strong desire for starting a family.
+4. **Pet preferences**: Pavitra likes some other pet, while Ava prefers cats, which means they can accommodate each other's tastes if they decide to get pets together.
+
+**Differences:**
+
+1. **Orientation**: Pavitra is straight, whereas Ava is lesbian. This fundamental difference might pose challenges in their relationship.
+2. **Lifestyle preferences**: Pavitra enjoys gym and watching anime, while Ava has interests in artistic expression (musical, writer). These hobbies are quite different, which could lead to a mismatch if they spend too much time together.
+3. **Drinking habits**: While both enjoy drinking, Pavitra drinks "often," whereas Ava does so "socially." This might indicate different social behaviors and expectations.
+
+**Compatibility Assessment:**
+
+Considering the differences in orientation and lifestyle preferences, it's essential to acknowledge that a relationship between a straight individual (Pavitra) and a lesbian individual (Ava Moore) might face significant challenges. However, compatibility is not solely determined by these factors.
+
+The similarities in age range, values on family, and pet preferences offer some positive aspects. The fact that both are from San Francisco provides a shared context for their relationship.
+
+**Recommendation:**
+
+Given the differences in orientation, it's crucial to acknowledge that this match might require extra effort and understanding from both parties. If either person is willing to accept and respect each other's differences, there's potential for growth and learning together.
+
+However, if either individual holds strongly to their identity or values being incompatible with the other's orientation, it may be best to explore matches within their preferred community.
+
+Ultimately, compatibility depends on various factors beyond just shared interests. Open communication, mutual respect, and a willingness to understand each other's differences are essential for any successful relationship.
+
