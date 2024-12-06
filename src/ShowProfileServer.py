@@ -7,6 +7,7 @@ from datetime import datetime
 from g4f.client import Client
 import ollama
 import time
+import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\pavit\\Desktop\\Programming for LLM\\Project\\HeartSync-main\\src\\users.db'
@@ -306,6 +307,131 @@ def get_profiles(current_username):
         return jsonify({"error": str(e)}), 500
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+
+
+@app.route('/profiles_search/<current_username>', methods=['POST'])
+def get_profiles_search(current_username):
+    try:
+        # Extract search criteria from the request
+        data = request.json
+        search_criteria = data.get("searchCriteria", "")
+        
+        # Connect to the database
+        conn = get_db()
+        cursor = conn.cursor()
+
+        # Fetch the current user's profile
+        cursor.execute("""
+            SELECT age, status, sex, orientation, body_type, height, diet, drinks, drugs, smokes, education, job, ethnicity, 
+                   religion, offspring, pets, speaks, sign, essay0, username
+            FROM users
+            WHERE username = ?
+        """, (current_username,))
+        current_user = cursor.fetchone()
+
+        if not current_user:
+            return jsonify({"error": "Current user profile not found"}), 404
+
+        # Convert current_user profile into a dictionary
+        user_columns = ['age', 'status', 'sex', 'orientation', 'body_type', 'height', 'diet', 'drinks', 'drugs', 'smokes',
+                        'education', 'job', 'ethnicity', 'religion', 'offspring', 'pets', 'speaks', 'sign', 'essay0', 'username']
+        current_profile = dict(zip(user_columns, current_user))
+
+        # Fetch first 15 other profiles
+        cursor.execute("""
+            SELECT age, status, sex, orientation, body_type, height, diet, drinks, drugs, smokes, education, job, ethnicity, 
+                   religion, offspring, pets, speaks, sign, essay0, username
+            FROM users
+            WHERE username != ?
+            LIMIT 20
+        """, (current_username,))
+        other_profiles = cursor.fetchall()
+
+        # List to store matching profiles with their analysis
+        matching_profiles = []
+
+        # Iterate through the first 15 profiles and calculate scores
+        for other in other_profiles:
+            other_profile = dict(zip(user_columns, other))
+
+            # Send current_profile and other_profile to LLM for scoring based strictly on search criteria
+            prompt = f"""
+            You are an AI assistant helping users on a matchmaking platform. 
+
+            **Potential Match Profile**
+            Name: {other_profile['username']}
+            Age: {other_profile['age']}
+            Status: {other_profile['status']}
+            Sex: {other_profile['sex']}
+            Orientation: {other_profile['orientation']}
+            Body Type: {other_profile['body_type']}
+            Height: {other_profile['height']}
+            Diet: {other_profile['diet']}
+            Drinks: {other_profile['drinks']}
+            Drugs: {other_profile['drugs']}
+            Smokes: {other_profile['smokes']}
+            Education: {other_profile['education']}
+            Job: {other_profile['job']}
+            Ethnicity: {other_profile['ethnicity']}
+            Religion: {other_profile['religion']}
+            Offspring: {other_profile['offspring']}
+            Pets: {other_profile['pets']}
+            Languages Spoken: {other_profile['speaks']}
+            Zodiac Sign: {other_profile['sign']}
+            Bio: {other_profile['essay0']}
+            
+            Search Criteria: {search_criteria}
+
+            Check if the Potential Match Profile strictly satisfies the Search Criteria. Based STRICTLY on the Search Criteria, give a score out of 10. 
+            Also, generate the score in JSON format, like if you give a score of 5, give output as {{ "Score": 5 }}. 
+            Along with this, give a brief analysis of your score in json format as well like {{ "Score Analysis": "(your analysis)" }}.
+            """
+
+            response = ask_local_llm(prompt)
+
+            # Updated JSON Parsing Logic
+            try:
+                # Clean and parse the response to extract the score and analysis
+                response = response.strip()  # Remove any leading/trailing whitespace
+                json_start = response.find('{')  # Find the start of the JSON object
+                json_end = response.rfind('}')  # Find the end of the JSON object
+                if json_start != -1 and json_end != -1:
+                    score_json = json.loads(response[json_start:json_end + 1])
+                    score = score_json.get("Score", 0)
+                    score_analysis = score_json.get("Score Analysis", "No analysis provided.")
+                else:
+                    score = 0
+                    score_analysis = "No analysis provided."
+            except json.JSONDecodeError:
+                score = 0  # Default score if JSON parsing fails
+                score_analysis = "No analysis provided."
+
+            print("Score = ", score)
+
+            # Add profile to the list if score > 5
+            if score > 5:
+                other_profile["Score"] = score
+                other_profile["Score Analysis"] = score_analysis
+                matching_profiles.append(other_profile)
+
+        # Close the database connection
+        conn.close()
+
+        print(matching_profiles)
+
+        # Return the list of matching profiles
+        return jsonify({"profiles": matching_profiles}), 200
+
+    except Exception as e:
+        print("Error during profile search:", str(e))
+        return jsonify({"error": "An error occurred during profile search"}), 500
+
+
+
+
+    
 
 @app.route('/like', methods=['POST'])
 def like_user():

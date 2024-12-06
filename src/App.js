@@ -10,11 +10,10 @@ import MainScreen from './MainScreen';
 import Preferences from './Preferences';
 import JoinScreen from './JoinScreen';
 import ShowProfiles from './ShowProfiles';
-import Profile from './Profile'; // Make sure the path is correct
-
+import ProfileSearch from './ProfileSearch'; // Importing the new ProfileSearch component
+import Profile from './Profile'; // Ensure the path is correct
 
 function App() {
-
   const centeredStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -28,26 +27,23 @@ function App() {
 
   return (
     <Router>
-      <div style = {centeredStyle}>
+      <div style={centeredStyle}>
         <h1>HeartSync</h1>
-        {/* Navigation Link to Choice Page */}
-        {/*<Link to="/choice"><button>Go to Choice</button></Link>*/}
-        {/*<Link to="/Chat"><button>Go to Chat</button></Link>*/}
-        {/* <Link to="/inbox"><button>Go to Inbox</button></Link> */}
-        {/* <Link to="/login"><button>Go to Login</button></Link> */}
-        {/* Setup the Router and Routes */}
         <img src={heartLogo} className="App-logo" alt="heart logo" />
+
+        {/* Routes */}
         <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/inbox" element={<Inbox />} />
-        <Route path="/chat" element={<Chat />} /> {/* Chat route */}
-        <Route path="/choice" element={<Choice />} /> {/* Choice route */}
-        <Route path="/main" element={<MainScreen />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/join" element={<JoinScreen />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/preferences" element={<Preferences />} />
-        <Route path="/showprofiles" element={<ShowProfiles />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/inbox" element={<Inbox />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/choice" element={<Choice />} />
+          <Route path="/main" element={<MainScreen />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/join" element={<JoinScreen />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/preferences" element={<Preferences />} />
+          <Route path="/showprofiles" element={<ShowProfiles />} />
+          <Route path="/profilesearch" element={<ProfileSearch />} /> {/* Added ProfileSearch Route */}
         </Routes>
       </div>
     </Router>
