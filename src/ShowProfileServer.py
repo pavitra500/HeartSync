@@ -352,6 +352,8 @@ def get_profiles_search(current_username):
         # List to store matching profiles with their analysis
         matching_profiles = []
 
+        start_time = time.time()
+
         # Iterate through the first 15 profiles and calculate scores
         for other in other_profiles:
             other_profile = dict(zip(user_columns, other))
@@ -389,6 +391,7 @@ def get_profiles_search(current_username):
             Along with this, give a brief analysis of your score in json format as well like {{ "Score Analysis": "(your analysis)" }}.
             """
 
+
             response = ask_local_llm(prompt)
 
             # Updated JSON Parsing Logic
@@ -420,6 +423,14 @@ def get_profiles_search(current_username):
         conn.close()
 
         print(matching_profiles)
+
+        end_time = time.time()
+
+        elapsed_time = end_time - start_time
+
+        # Append execution time to log file
+        with open("search_time.log", "a") as log_file:
+            log_file.write(f"Execution time: {elapsed_time:.6f} seconds for query: {search_criteria}\n")        
 
         # Return the list of matching profiles
         return jsonify({"profiles": matching_profiles}), 200

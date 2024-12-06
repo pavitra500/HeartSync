@@ -348,7 +348,12 @@ def ask_assistant():
 
     # Adjust the prompt to ask for suggestions specifically for the current user
     conversation_text = "\n".join([f"{msg.get('name', '')}: {msg.get('message', '')}" for msg in current_conversation])
-    prompt = f"I am {current_user} and I am talking to {otherUser}. This is {otherUser}'s profile {user_profile}. Based on {otherUser}'s profile and following latest conversation:\n{conversation_text}\n give me 5 suggestions for my next message based on our latest conversation and {otherUser}'s whole profile. Just give the 5 things that i can ask, dont write any extra text. Also, DO NOT suggest a question if last message is a question." 
+    prompt = f"""I am {current_user} and I am talking to {otherUser}. This is {otherUser}'s profile {user_profile}. 
+    Based on {otherUser}'s profile and following latest conversation:\n{conversation_text}\n give me 10 suggestions for my next
+      message based on our latest conversation and {otherUser}'s whole profile. 
+      Just give the 10 things that i can reply with, dont write any extra text. 
+      Emphasise more on the last message from the person and based on our profiles and whole conversation.
+      Also, if last message from {otherUser} is a question, tell me what replies i can give. Dont give me another questions."""
 
     print(prompt)
 
@@ -359,8 +364,18 @@ def ask_assistant():
 
 
     #suggestion = response.choices[0].message.content
+    start_time = time.time()
     suggestion = ask_local_llm(prompt)
     suggestions = suggestion.strip().split('\n')
+    end_time = time.time()
+
+    elapsed_time = end_time - start_time
+
+    print(f"Chat Execution time: {elapsed_time:.6f} seconds")
+
+    # Append execution time to log file
+    with open("chat_time.log", "a") as log_file:
+        log_file.write(f"Execution time: {elapsed_time:.6f} seconds\n")    
     
 
     return jsonify({"suggestions": suggestions})
